@@ -18,7 +18,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@libs/assets/*": ["./libs/assets/*"],
+      "@libs/components": ["./libs/components/index.ts"],
+      "@libs/design": ["./libs/design/index.ts"],
+      "@libs/layouts": ["./libs/layouts/index.ts"],
+      "@libs/utils": ["./libs/utils/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

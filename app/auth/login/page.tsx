@@ -1,9 +1,9 @@
-import { Card, Container } from '@libs/components';
+import { Container, Input } from '@libs/components';
 
 const page = () => {
   return (
     <Container>
-      <Card>hello</Card>
+      <Input />
     </Container>
   );
 };
