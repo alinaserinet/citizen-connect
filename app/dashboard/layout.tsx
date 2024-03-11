@@ -1,9 +1,12 @@
-import { SideNav } from '@libs/design';
+import { Navbar, SideNav } from '@libs/design';
 
 const layout = () => {
   return (
     <div className="">
-      <SideNav opened />
+      <SideNav />
+      <main className="mr-0 p-4 lg:mr-64">
+        <Navbar />
+      </main>
     </div>
   );
 };
