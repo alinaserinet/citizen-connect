@@ -1,10 +1,21 @@
-import { LogoBar, Navbar, PageTitle, SideNav, UserTray } from '@libs/design';
+import {
+  LogoBar,
+  Menu,
+  Navbar,
+  PageTitle,
+  SideNav,
+  UserTray,
+} from '@libs/design';
 
 const layout = () => {
   return (
     <div className="">
-      <SideNav className="lg:start-3 lg:top-3" opened>
-        <LogoBar logoSrc="/next.svg" />
+      <SideNav
+        className="flex flex-col gap-4 lg:start-3 lg:top-3 lg:h-[calc(100vh-1.5rem)]"
+        opened
+      >
+        <LogoBar logoSrc="/next.svg" className="p-3" />
+        <Menu className="p-3" />
       </SideNav>
       <main className="mr-0 p-3 lg:mr-[15.75rem]">
         <Navbar className="flex items-center justify-between">

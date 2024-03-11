@@ -12,7 +12,7 @@ const TopBar = ({ className, logoSrc, logoAlt }: TopBarProps) => {
   return (
     <div
       className={twMerge(
-        'flex h-16 flex-col items-center justify-center p-3',
+        'flex h-16 flex-col items-center justify-center',
         className,
       )}
     >

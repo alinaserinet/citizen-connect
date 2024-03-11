@@ -5,3 +5,4 @@ export { default as CardBody } from './CardBody';
 export { default as CardHeader } from './CardHeader';
 export { default as Container } from './Container';
 export { default as Input } from './Input';
+export { default as MenuItem } from './MenuItem';

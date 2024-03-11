@@ -16,7 +16,7 @@ const SideNav = ({
   return (
     <Card
       className={twMerge(
-        'fixed top-0 h-screen w-60 rounded-none lg:h-[calc(100vh-1.75rem)] lg:rounded-xl',
+        'fixed top-0 h-screen w-60 rounded-none lg:rounded-xl',
         className,
         opened ? 'start-0' : '-start-60',
       )}

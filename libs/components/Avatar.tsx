@@ -9,7 +9,7 @@ const Avatar = ({ className = '' }: AvatarProps) => {
   return (
     <div
       className={twMerge(
-        'relative flex h-10 w-10 flex-col items-center justify-center rounded-full text-gray-400 ring-2 ring-gray-200',
+        'relative flex h-9 w-9 flex-col items-center justify-center rounded-full text-gray-400 ring-2 ring-gray-200',
         className,
       )}
     >
