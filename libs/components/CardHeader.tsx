@@ -1,10 +1,14 @@
-import type { ReactNode } from 'react'
+import type { ReactNode } from 'react';
 
 interface CardHeaderProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
 const CardHeader = ({ children }: CardHeaderProps) => {
-    return <div>{children}</div>
-}
-export default CardHeader
+  return (
+    <div className="border-b border-gray-100 p-4 pb-3 text-center font-semibold">
+      {children}
+    </div>
+  );
+};
+export default CardHeader;
