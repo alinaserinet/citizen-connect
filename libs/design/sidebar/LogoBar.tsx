@@ -6,9 +6,10 @@ interface TopBarProps {
   className?: string;
   logoSrc?: string;
   logoAlt?: string;
+  logoHref?: string;
 }
 
-const TopBar = ({ className, logoSrc, logoAlt }: TopBarProps) => {
+const TopBar = ({ className, logoSrc, logoAlt, logoHref }: TopBarProps) => {
   return (
     <div
       className={twMerge(
@@ -17,7 +18,7 @@ const TopBar = ({ className, logoSrc, logoAlt }: TopBarProps) => {
       )}
     >
       {logoSrc ? (
-        <Link href="/">
+        <Link href={logoHref ?? '/'}>
           <Image
             src={logoSrc}
             alt={logoAlt ?? 'app logo'}
