@@ -8,6 +8,6 @@ interface NavbarProps {
 }
 
 const Navbar = ({ children, className = '' }: NavbarProps) => {
-  return <Card className={twMerge('p-3', className)}>{children}</Card>;
+  return <Card className={twMerge('h-16 p-3', className)}>{children}</Card>;
 };
 export default Navbar;
