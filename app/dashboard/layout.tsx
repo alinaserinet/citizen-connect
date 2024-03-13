@@ -6,8 +6,9 @@ import {
   SideNav,
   UserTray,
 } from '@libs/design';
+import type { ReactNode } from 'react';
 
-const layout = () => {
+const layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="">
       <SideNav
@@ -17,11 +18,12 @@ const layout = () => {
         <LogoBar logoSrc="/next.svg" className="p-3" logoHref="/main" />
         <Menu className="p-3" />
       </SideNav>
-      <main className="mr-0 p-3 lg:mr-[15.75rem]">
+      <main className="mr-0 flex flex-col gap-3 p-3 lg:mr-[15.75rem]">
         <Navbar className="flex items-center justify-between">
           <PageTitle title="عنوان صفحه" />
           <UserTray className="w-56" />
         </Navbar>
+        <div>{children}</div>
       </main>
     </div>
   );
