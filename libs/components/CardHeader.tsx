@@ -6,7 +6,7 @@ interface CardHeaderProps {
 
 const CardHeader = ({ children }: CardHeaderProps) => {
   return (
-    <div className="border-b border-gray-100 p-4 pb-3 text-center font-semibold">
+    <div className="border-b border-gray-100 bg-gray-50 p-4 pb-3 text-center font-semibold">
       {children}
     </div>
   );

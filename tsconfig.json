@@ -20,7 +20,7 @@
     "paths": {
       "@libs/assets/*": ["./libs/assets/*"],
       "@libs/components": ["./libs/components/index.ts"],
-      "@libs/design": ["./libs/design/index.ts"],
+      "@libs/modules": ["./libs/modules/index.ts"],
       "@libs/layouts": ["./libs/layouts/index.ts"],
       "@libs/utils": ["./libs/utils/index.ts"],
       "@types": ["./types/index.ts"],

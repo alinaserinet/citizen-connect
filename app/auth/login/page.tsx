@@ -1,10 +1,13 @@
-import { Container } from '@libs/components';
-import { LoginBox } from '@libs/design';
+import { Card, CardHeader, Container } from '@libs/components';
+import { LoginBox } from '@libs/modules';
 
 const page = () => {
   return (
-    <Container className="py-6">
-      <LoginBox className="mx-auto max-w-sm" />
+    <Container className="max-w-sm py-8">
+      <Card>
+        <CardHeader>ورود به حساب</CardHeader>
+        <LoginBox className="gap-10 p-8" />
+      </Card>
     </Container>
   );
 };

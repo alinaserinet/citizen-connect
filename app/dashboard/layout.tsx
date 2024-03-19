@@ -6,7 +6,7 @@ import {
   PageTitle,
   SideNav,
   UserTray,
-} from '@libs/design';
+} from '@libs/modules';
 import type { ReactNode } from 'react';
 
 const layout = ({ children }: { children: ReactNode }) => {

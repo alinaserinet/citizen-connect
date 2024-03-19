@@ -3,7 +3,7 @@ import type { Config } from 'tailwindcss';
 const config: Config = {
   content: [
     './libs/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './libs/design/**/*.{js,ts,jsx,tsx,mdx}',
+    './libs/modules/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {

@@ -13,7 +13,7 @@ const Button = ({ children, className, ...rest }: ButtonProps) => {
   return (
     <button
       className={twMerge(
-        'bg-emerald-600 flex gap-x-3 text-sm sm:text-base items-center justify-center text-white rounded-xl hover:bg-emerald-600/80 duration-300 transition-colors border border-transparent px-8 py-3',
+        'flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-emerald-600 px-8 py-2.5 text-sm text-white transition-colors duration-300 hover:bg-emerald-600/80 sm:text-base',
         className,
       )}
       {...rest}
