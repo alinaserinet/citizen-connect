@@ -1,3 +1,4 @@
+import { mainMenu } from '@data/base';
 import {
   LogoBar,
   Menu,
@@ -16,7 +17,7 @@ const layout = ({ children }: { children: ReactNode }) => {
         opened
       >
         <LogoBar logoSrc="/next.svg" className="p-3" logoHref="/main" />
-        <Menu className="p-3" />
+        <Menu className="p-3" items={mainMenu} />
       </SideNav>
       <main className="mr-0 flex flex-col gap-3 p-3 lg:mr-[15.75rem]">
         <Navbar className="flex items-center justify-between">

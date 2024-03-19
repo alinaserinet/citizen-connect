@@ -1,3 +1,3 @@
 export { default as LogoBar } from './LogoBar';
-export { default as Menu } from './Menu';
+export * from './menu';
 export { default as SideNav } from './SideNav';
