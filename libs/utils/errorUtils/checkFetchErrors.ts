@@ -12,7 +12,7 @@ const checkFetchErrors: ErrorChecker = async (
 
   const parsedResponse = await response.json();
 
-  const errorCode = (parsedResponse?.error_code ?? status) as ErrorKey | null;
+  const errorCode = (parsedResponse?.code ?? status) as ErrorKey | null;
 
   if (!errorCode || !(errorCode in errors)) {
     throw new Error('ERR_UNKNOWN', { cause: errors.ERR_UNKNOWN });
