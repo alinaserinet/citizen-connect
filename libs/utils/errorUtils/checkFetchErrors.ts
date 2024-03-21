@@ -1,4 +1,4 @@
-import type { DomainErrorCodes } from '@data/errors';
+import type { ErrorKey } from '@data/errors';
 import errors from '@data/errors';
 import type { ErrorChecker } from '@types';
 
@@ -8,17 +8,25 @@ const checkFetchErrors: ErrorChecker = async (
   requestInit: RequestInit,
 ) => {
   const { status, ok } = response;
-
   if (ok) return;
 
-  if (!(status in errors)) {
-    throw { ...errors.ERR_UNKNOWN, url, requestInit };
+  const parsedResponse = await response.json();
+
+  const errorCode = (parsedResponse?.error_code ?? status) as ErrorKey | null;
+
+  if (!errorCode || !(errorCode in errors)) {
+    throw new Error('ERR_UNKNOWN', { cause: errors.ERR_UNKNOWN });
   }
 
-  const parsedResponse = await response.json();
-  const errorCode = parsedResponse?.code as DomainErrorCodes;
-
-  throw { ...errors[errorCode], url, requestInit, code: errorCode ?? status };
+  throw new Error(`${errorCode}`, {
+    cause: {
+      url,
+      requestInit,
+      code: errorCode,
+      ...errors[errorCode],
+      time: parsedResponse?.unix,
+    },
+  });
 };
 
 export default checkFetchErrors;

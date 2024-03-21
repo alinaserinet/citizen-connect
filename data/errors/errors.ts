@@ -7,7 +7,7 @@ import type DomainErrorCodes from './domainErrors/codes';
 import httpErrors from './httpErrors';
 import type { HttpErrorKey } from './httpErrors/keys';
 
-type ErrorKey = ClientErrorKey | DomainErrorCodes | HttpErrorKey;
+export type ErrorKey = ClientErrorKey | DomainErrorCodes | HttpErrorKey;
 const errors: Record<ErrorKey, AppError> = {
   ...clientErrors,
   ...httpErrors,

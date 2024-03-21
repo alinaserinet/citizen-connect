@@ -19,5 +19,5 @@ export const isInstanceOfAppError = (error: unknown): boolean => {
     return false;
   }
 
-  return ['type', 'message', 'faMessage'].every(key => key in error);
+  return ['type', 'message'].every(key => key in error);
 };
