@@ -20,8 +20,11 @@
     "paths": {
       "@libs/assets/*": ["./libs/assets/*"],
       "@libs/components": ["./libs/components/index.ts"],
-      "@libs/modules": ["./libs/modules/index.ts"],
+      "@libs/design": ["./libs/design/index.ts"],
+      "@libs/guards": ["./libs/guards/index.ts"],
       "@libs/layouts": ["./libs/layouts/index.ts"],
+      "@libs/modules": ["./libs/modules/index.ts"],
+      "@libs/services": ["./libs/services/index.ts"],
       "@libs/utils": ["./libs/utils/index.ts"],
       "@types": ["./types/index.ts"],
       "@data/base": ["./data/base/index.ts"]

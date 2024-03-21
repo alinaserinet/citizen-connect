@@ -1,5 +1,6 @@
 import { Button } from '@libs/components';
-import { LoginBox, LogoBar, Navbar, PageTitle, SideNav } from '@libs/modules';
+import { LogoBar, Navbar, PageTitle, SideNav } from '@libs/design';
+import { LoginBox } from '@libs/modules';
 import { Phone } from '@phosphor-icons/react/dist/ssr/Phone';
 import type { ReactNode } from 'react';
 
