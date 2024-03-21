@@ -19,6 +19,7 @@
     ],
     "paths": {
       "@libs/assets/*": ["./libs/assets/*"],
+      "@libs/clients": ["./libs/clients/index.ts"],
       "@libs/components": ["./libs/components/index.ts"],
       "@libs/design": ["./libs/design/index.ts"],
       "@libs/guards": ["./libs/guards/index.ts"],
@@ -27,7 +28,8 @@
       "@libs/services": ["./libs/services/index.ts"],
       "@libs/utils": ["./libs/utils/index.ts"],
       "@types": ["./types/index.ts"],
-      "@data/base": ["./data/base/index.ts"]
+      "@data/base": ["./data/base/index.ts"],
+      "@data/errors": ["./data/errors/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
