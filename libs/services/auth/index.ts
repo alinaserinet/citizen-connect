@@ -1,3 +1,5 @@
+import { authHttpClient } from '@libs/clients';
+
 import AuthService from './AuthService';
 
-export const authService = new AuthService('/auth');
+export const authService = new AuthService('/auth', authHttpClient);

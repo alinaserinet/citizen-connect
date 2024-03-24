@@ -25,6 +25,7 @@
       "@libs/guards": ["./libs/guards/index.ts"],
       "@libs/layouts": ["./libs/layouts/index.ts"],
       "@libs/modules": ["./libs/modules/index.ts"],
+      "@libs/providers": ["./libs/providers/index.ts"],
       "@libs/services": ["./libs/services/index.ts"],
       "@libs/utils": ["./libs/utils/index.ts"],
       "@types": ["./types/index.ts"],
