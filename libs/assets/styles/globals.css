@@ -4,7 +4,7 @@
 
 body {
   @apply font-main text-sm;
-  @apply bg-[#e5e7eb];
+  @apply !bg-[#e5e7eb];
   -moz-font-feature-settings: 'ss01';
   -webkit-font-feature-settings: 'ss01';
   font-feature-settings: 'ss01';
