@@ -1,4 +1,3 @@
-'use client';
 import { checkFetchErrors, generalClientErrorHandler } from '@libs/utils';
 import type { TokenHandler } from '@types';
 
