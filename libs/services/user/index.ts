@@ -1,5 +1,6 @@
-import { userHttpClient } from '@libs/clients';
+import { userHttpClient, userHttpServer } from '@libs/bridges';
 
 import UserService from './UserService';
 
-export const userService = new UserService('/user', userHttpClient);
+export const userClientService = new UserService('/user', userHttpClient);
+export const userServerService = new UserService('/user', userHttpServer);

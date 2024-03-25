@@ -1,11 +1,8 @@
-'use client';
-import { userService } from '@libs/services';
-import { useEffect } from 'react';
+import { userServerService } from '@libs/services';
 
-const Profile = () => {
-  useEffect(() => {
-    const user = userService.getProfile().then(console.log);
-  });
+const Profile = async () => {
+  const user = await userServerService.getProfile();
+  console.log(user);
 
   return <div>profile</div>;
 };

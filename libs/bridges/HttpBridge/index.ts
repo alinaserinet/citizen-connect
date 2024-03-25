@@ -13,7 +13,7 @@ const generateBearerToken = (token: string) => {
   return token !== '' ? `Bearer ${token}` : '';
 };
 
-export default class HttpClient {
+export default class HttpBridge {
   public constructor(
     private readonly baseUrl: string,
     private readonly errorChecker: ErrorChecker,

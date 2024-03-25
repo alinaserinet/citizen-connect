@@ -1,17 +1,17 @@
 import { checkFetchErrors, generalClientErrorHandler } from '@libs/utils';
 import type { TokenHandler } from '@types';
 
-import HttpClient from '../HttpClient';
+import HttpBridge from '../HttpBridge';
 
 const accessTokenHandler: TokenHandler = () => {
-  return 'token';
+  return '$';
 };
 
-const userHttpClient = new HttpClient(
+const userHttpServer = new HttpBridge(
   'http://localhost:8000',
   checkFetchErrors,
   generalClientErrorHandler,
   accessTokenHandler,
 );
 
-export default userHttpClient;
+export default userHttpServer;

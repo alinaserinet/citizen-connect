@@ -1,12 +1,12 @@
 import { checkFetchErrors, generalClientErrorHandler } from '@libs/utils';
 
-import HttpClient from '../HttpClient';
+import HttpBridge from '../HttpBridge';
 
-const guestHttpClient = new HttpClient(
+const guestHttpServer = new HttpBridge(
   '/',
   checkFetchErrors,
   generalClientErrorHandler,
   () => '',
 );
 
-export default guestHttpClient;
+export default guestHttpServer;

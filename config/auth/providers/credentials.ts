@@ -1,4 +1,4 @@
-import { authService } from '@libs/services';
+import { authServerService } from '@libs/services';
 import type { User } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
@@ -14,7 +14,7 @@ export default CredentialsProvider({
     if (!mobile || !otp) return null;
 
     try {
-      const res = await authService.entry(mobile, otp);
+      const res = await authServerService.entry(mobile, otp);
       return res as unknown as User;
     } catch (_) {
       return null;

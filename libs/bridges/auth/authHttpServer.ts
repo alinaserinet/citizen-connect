@@ -1,15 +1,16 @@
+'use client';
 import { checkFetchErrors, generalClientErrorHandler } from '@libs/utils';
 import type { TokenHandler } from '@types';
 
-import HttpClient from '../HttpClient';
+import HttpBridge from '../HttpBridge';
 
 const refreshTokenHandler: TokenHandler = () => 'refresh-token';
 
-const authHttpClient = new HttpClient(
+const authHttpServer = new HttpBridge(
   'http://localhost:8000',
   checkFetchErrors,
   generalClientErrorHandler,
   refreshTokenHandler,
 );
 
-export default authHttpClient;
+export default authHttpServer;

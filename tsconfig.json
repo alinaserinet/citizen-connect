@@ -19,7 +19,7 @@
     ],
     "paths": {
       "@libs/assets/*": ["./libs/assets/*"],
-      "@libs/clients": ["./libs/clients/index.ts"],
+      "@libs/bridges": ["./libs/bridges/index.ts"],
       "@libs/components": ["./libs/components/index.ts"],
       "@libs/design": ["./libs/design/index.ts"],
       "@libs/guards": ["./libs/guards/index.ts"],

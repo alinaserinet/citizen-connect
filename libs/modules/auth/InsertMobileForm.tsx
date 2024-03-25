@@ -1,7 +1,7 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, FormFieldError, Input, Label } from '@libs/components';
-import { authService } from '@libs/services';
+import { authClientService } from '@libs/services';
 import type { Dispatch, SetStateAction } from 'react';
 import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
@@ -31,7 +31,7 @@ const InsertMobileForm = ({
 
   const handleLogin: SubmitHandler<MobileFormSchema> = async data => {
     setIsLoading(true);
-    const result = await authService
+    const result = await authClientService
       .getOtp(data.mobile)
       .finally(() => setIsLoading(false));
     setMobile(result.mobile);

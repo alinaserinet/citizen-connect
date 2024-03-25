@@ -1,4 +1,4 @@
-import type { HttpClient } from '@libs/clients';
+import type { HttpClient } from '../../bridges';
 
 export default class UserService {
   public constructor(
