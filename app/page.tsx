@@ -1,6 +1,6 @@
-import { Card, Container } from '@libs/components';
+import { Container } from '@libs/components';
 
 const page = () => {
-  return <Container>hello</Container>;
+  return <Container>صفحه اصلی</Container>;
 };
 export default page;
