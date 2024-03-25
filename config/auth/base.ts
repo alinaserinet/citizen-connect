@@ -6,4 +6,5 @@ export const authBaseConfig: BaseAuthConfig = {
   pages: {
     signIn: '/auth/login',
   },
+  session: { strategy: 'jwt' },
 };

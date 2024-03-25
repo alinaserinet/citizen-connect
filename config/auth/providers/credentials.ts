@@ -1,5 +1,6 @@
+// eslint-disable-next-line import/no-cycle
 import { authServerService } from '@libs/services';
-import type { User } from 'next-auth';
+import type { Awaitable, User } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 export default CredentialsProvider({
@@ -15,7 +16,10 @@ export default CredentialsProvider({
 
     try {
       const res = await authServerService.entry(mobile, otp);
-      return res as unknown as User;
+      return await ({
+        accessToken: res.access_token,
+        refreshToken: res.refresh_token,
+      } as Awaitable<User>);
     } catch (_) {
       return null;
     }

@@ -1,6 +1,7 @@
 import '@libs/assets/fonts/fonts.css';
 import '@libs/assets/styles/globals.css';
 
+import { authConfig } from '@config';
 import { mainMenu } from '@data/base';
 import {
   LogoBar,
@@ -26,7 +27,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const session = await getServerSession();
+  const session = await getServerSession(authConfig);
   console.log('session', session);
 
   return (

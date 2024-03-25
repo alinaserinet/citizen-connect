@@ -6,7 +6,6 @@ export const authCallbacks: Partial<CallbacksOptions> = {
   },
 
   session({ session, token }) {
-    session.user = token;
-    return session;
+    return { ...session, user: { ...token } };
   },
 };

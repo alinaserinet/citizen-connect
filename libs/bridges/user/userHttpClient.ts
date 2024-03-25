@@ -7,10 +7,7 @@ import HttpBridge from '../HttpBridge';
 
 const accessTokenHandler: TokenHandler = async () => {
   const session = await getSession();
-  console.log('session::', session);
-
-  // @ts-expect-error no-param
-  return session?.user?.access_token;
+  return session?.user.accessToken ?? '';
 };
 
 const userHttpClient = new HttpBridge(
