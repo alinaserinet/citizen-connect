@@ -30,7 +30,8 @@
       "@libs/utils": ["./libs/utils/index.ts"],
       "@types": ["./types/index.ts"],
       "@data/base": ["./data/base/index.ts"],
-      "@data/errors": ["./data/errors/index.ts"]
+      "@data/errors": ["./data/errors/index.ts"],
+      "@config": ["./config/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
