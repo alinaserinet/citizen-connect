@@ -3,10 +3,12 @@ import type { TokenHandler } from '@types';
 
 import HttpClient from '../HttpClient';
 
-const accessTokenHandler: TokenHandler = () => 'access-token';
+const accessTokenHandler: TokenHandler = () => {
+  return 'token';
+};
 
 const userHttpClient = new HttpClient(
-  '/',
+  'http://localhost:8000',
   checkFetchErrors,
   generalClientErrorHandler,
   accessTokenHandler,

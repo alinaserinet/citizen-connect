@@ -9,6 +9,10 @@ const defaultHeaders = {
   'Content-Type': 'application/json',
 };
 
+const generateBearerToken = (token: string) => {
+  return token !== '' ? `Bearer ${token}` : '';
+};
+
 export default class HttpClient {
   public constructor(
     private readonly baseUrl: string,
@@ -31,7 +35,7 @@ export default class HttpClient {
         method: 'GET',
         headers: {
           ...defaultHeaders,
-          Authorization: this.tokenHandler(),
+          Authorization: generateBearerToken(await this.tokenHandler()),
         },
         signal,
       };
@@ -63,7 +67,7 @@ export default class HttpClient {
         method: 'POST',
         headers: {
           ...defaultHeaders,
-          Authorization: this.tokenHandler(),
+          Authorization: generateBearerToken(await this.tokenHandler()),
         },
         body: JSON.stringify(data),
         signal,
@@ -96,7 +100,7 @@ export default class HttpClient {
         method: 'PATCH',
         headers: {
           ...defaultHeaders,
-          Authorization: this.tokenHandler(),
+          Authorization: generateBearerToken(await this.tokenHandler()),
         },
         body: JSON.stringify(data),
         signal,
@@ -129,7 +133,7 @@ export default class HttpClient {
         method: 'PUT',
         headers: {
           ...defaultHeaders,
-          Authorization: this.tokenHandler(),
+          Authorization: generateBearerToken(await this.tokenHandler()),
         },
         body: JSON.stringify(data),
         signal,
@@ -161,7 +165,7 @@ export default class HttpClient {
         method: 'DELETE',
         headers: {
           ...defaultHeaders,
-          Authorization: this.tokenHandler(),
+          Authorization: generateBearerToken(await this.tokenHandler()),
         },
         signal,
       };

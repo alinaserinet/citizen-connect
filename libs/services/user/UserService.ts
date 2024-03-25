@@ -1,8 +1,15 @@
-export default class UserService {
-  public constructor(private readonly baseUrl: string) {}
+import type { HttpClient } from '@libs/clients';
 
-  public getProfile() {
-    return null;
+export default class UserService {
+  public constructor(
+    private readonly baseUrl: string,
+    private readonly client: HttpClient,
+  ) {
+    this.getProfile = this.getProfile.bind(this);
+  }
+
+  public getProfile(abortSignal?: AbortSignal) {
+    return this.client.get(`/user/profile`, abortSignal);
   }
 
   public updateProfile(data: any) {

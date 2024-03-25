@@ -4,11 +4,11 @@ import { User } from '@phosphor-icons/react/dist/ssr/User';
 import type { MenuItem } from '@types';
 
 const mainMenu: MenuItem[] = [
-  { id: 1, href: '/profile', title: 'اطلاعات کاربری', icon: User },
+  { id: 1, href: '/dashboard/profile', title: 'اطلاعات کاربری', icon: User },
   { id: 1, href: '/profile', title: 'تنظیمات امنیتی', icon: ShieldCheckered },
   {
     id: 1,
-    href: '/profile',
+    href: '/dashboard/profile',
     title: 'درخواست مشکلات',
     icon: ChatCenteredText,
   },

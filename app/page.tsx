@@ -1,10 +1,6 @@
 import { Card, Container } from '@libs/components';
 
 const page = () => {
-  return (
-    <Container>
-      <Card>hello</Card>
-    </Container>
-  );
+  return <Container>hello</Container>;
 };
 export default page;

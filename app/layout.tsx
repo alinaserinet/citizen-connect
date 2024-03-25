@@ -1,6 +1,16 @@
 import '@libs/assets/fonts/fonts.css';
 import '@libs/assets/styles/globals.css';
 
+import { mainMenu } from '@data/base';
+import {
+  LogoBar,
+  MainWrapper,
+  Menu,
+  Navbar,
+  PageTitle,
+  Sidebar,
+  SideNav,
+} from '@libs/design';
 import { UserProvider } from '@libs/providers';
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
@@ -22,7 +32,20 @@ export default async function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body>
-        <UserProvider session={session}>{children}</UserProvider>
+        <Sidebar>
+          <SideNav>
+            <LogoBar />
+            <Menu items={mainMenu} />
+          </SideNav>
+        </Sidebar>
+        <MainWrapper>
+          <header>
+            <Navbar>
+              <PageTitle />
+            </Navbar>
+          </header>
+          <UserProvider session={session}>{children}</UserProvider>
+        </MainWrapper>
       </body>
     </html>
   );

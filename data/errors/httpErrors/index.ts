@@ -12,6 +12,22 @@ const httpErrors: Record<HttpErrorKey, AppError> = {
     fixed: true,
     showRefreshBtn: true,
   },
+  401: {
+    message: 'دسترسی غیر مجاز',
+    description: 'شما دسترسی لازم به وب سرویس را ندارید',
+    type: 'http',
+    icon: WifiSlash,
+    fixed: false,
+    showRefreshBtn: false,
+  },
+  404: {
+    message: 'وب سرویس یافت نشد',
+    description: 'وب سرویس مورد نظر وجود',
+    type: 'http',
+    icon: WifiSlash,
+    fixed: false,
+    showRefreshBtn: false,
+  },
 };
 
 export default httpErrors;

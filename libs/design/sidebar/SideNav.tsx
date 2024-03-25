@@ -3,23 +3,14 @@ import type { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 interface SideNavProps {
-  opened?: boolean;
   className?: string;
   children: ReactNode;
 }
 
-const SideNav = ({
-  opened = false,
-  className = '',
-  children,
-}: SideNavProps) => {
+const SideNav = ({ className, children }: SideNavProps) => {
   return (
     <Card
-      className={twMerge(
-        'fixed top-0 h-screen w-60 rounded-none lg:rounded-xl',
-        className,
-        opened ? 'start-0' : '-start-60',
-      )}
+      className={twMerge('h-full rounded-none p-3 lg:rounded-xl', className)}
     >
       {children}
     </Card>

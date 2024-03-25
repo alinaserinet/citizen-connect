@@ -14,6 +14,7 @@ const keywordsErrorHandler: ErrorHandler<Error> = error => {
 
   return {
     ...errors.ERR_UNKNOWN,
+    description: error.message,
     time: Date.now(),
   };
 };
