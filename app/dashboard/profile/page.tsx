@@ -4,6 +4,10 @@ const Profile = async () => {
   const user = await userServerService.getProfile();
   console.log(user);
 
-  return <div>{JSON.stringify(user)}</div>;
+  return (
+    <div>
+      <div>صفحه کاربر</div>
+    </div>
+  );
 };
 export default Profile;

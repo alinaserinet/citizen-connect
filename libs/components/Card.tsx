@@ -1,4 +1,5 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 interface CardProps
@@ -6,17 +7,20 @@ interface CardProps
   children: ReactNode;
 }
 
-const Card = ({ children, className, ...rest }: CardProps) => {
-  return (
-    <div
-      className={twMerge(
-        'overflow-hidden rounded-xl bg-white shadow-sm dark:bg-gray-800',
-        className,
-      )}
-      {...rest}
-    >
-      {children}
-    </div>
-  );
-};
+const Card = forwardRef<HTMLDivElement, CardProps>(
+  ({ children, className, ...rest }: CardProps, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={twMerge(
+          'overflow-hidden rounded-xl bg-white shadow-sm dark:bg-gray-800',
+          className,
+        )}
+        {...rest}
+      >
+        {children}
+      </div>
+    );
+  },
+);
 export default Card;

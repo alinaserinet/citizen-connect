@@ -1,3 +1,3 @@
 export { default as Navbar } from './Navbar';
 export { default as PageTitle } from './PageTitle';
-export { default as UserTray } from './UserTray';
+export { default as UserTray } from './user-tray';

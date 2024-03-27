@@ -52,7 +52,7 @@ export default class HttpBridge {
         return this.errorMiddleware(appError);
       }
 
-      return Promise.reject(appError);
+      return Promise.reject(appError.message);
     }
   }
 
@@ -85,7 +85,7 @@ export default class HttpBridge {
         return this.errorMiddleware(appError);
       }
 
-      return Promise.reject(appError);
+      return Promise.reject(appError.message);
     }
   }
 
@@ -118,7 +118,7 @@ export default class HttpBridge {
         return this.errorMiddleware(appError);
       }
 
-      return Promise.reject(appError);
+      return Promise.reject(appError.message);
     }
   }
 
@@ -151,7 +151,7 @@ export default class HttpBridge {
         return this.errorMiddleware(appError);
       }
 
-      return Promise.reject(appError);
+      return Promise.reject(appError.message);
     }
   }
 
@@ -182,7 +182,7 @@ export default class HttpBridge {
         return this.errorMiddleware(appError);
       }
 
-      return Promise.reject(appError);
+      return Promise.reject(appError.message);
     }
   }
 }

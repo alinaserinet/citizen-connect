@@ -3,15 +3,8 @@ import '@libs/assets/styles/globals.css';
 
 import { authConfig } from '@config';
 import { mainMenu } from '@data/base';
-import {
-  LogoBar,
-  MainWrapper,
-  Menu,
-  Navbar,
-  PageTitle,
-  Sidebar,
-  SideNav,
-} from '@libs/design';
+import { LogoBar, MainWrapper, Menu, Sidebar, SideNav } from '@libs/design';
+import { MainNavbar } from '@libs/modules';
 import { UserProvider } from '@libs/providers';
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
@@ -28,8 +21,6 @@ export default async function RootLayout({
   children: ReactNode;
 }>) {
   const session = await getServerSession(authConfig);
-  console.log('session', session);
-
   return (
     <html lang="fa" dir="rtl">
       <body>
@@ -40,11 +31,7 @@ export default async function RootLayout({
           </SideNav>
         </Sidebar>
         <MainWrapper>
-          <header>
-            <Navbar>
-              <PageTitle />
-            </Navbar>
-          </header>
+          <MainNavbar />
           <UserProvider session={session}>{children}</UserProvider>
         </MainWrapper>
       </body>
