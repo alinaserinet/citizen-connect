@@ -18,6 +18,8 @@ const UserTray = ({ className, userTitle }: UserTrayProps) => {
 
   const handleToggleToolbox = () => {
     toolboxRef.current?.classList.toggle('opacity-0');
+    toolboxRef.current?.classList.toggle('z-[-1]');
+    toolboxRef.current?.classList.toggle('z-50');
   };
 
   const handleSignOut = async () => {
@@ -30,7 +32,7 @@ const UserTray = ({ className, userTitle }: UserTrayProps) => {
         <Avatar />
       </button>
       <Card
-        className="absolute left-3 top-20 w-52 text-[0.8rem] opacity-0 transition-opacity"
+        className="absolute left-3 top-20 z-[-1] w-52 text-[0.8rem] opacity-0 shadow-lg transition-all ease-in-out"
         ref={toolboxRef}
       >
         <CardBody className="border-0 p-0">
