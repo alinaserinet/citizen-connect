@@ -11,11 +11,19 @@ export const ProfileInfo = ({ user }: ProfileInfoProps) => {
       <InfoItem title="نام" value={user.firstName} />
       <InfoItem title="نام خانوادگی" value={user.lastName} />
       <InfoItem title="کد ملی" value={user.nationalCode} />
-      <InfoItem title="تلفن همراه" value={user.mobile} />
-      <InfoItem title="ایمیل" value={user.email} />
+      <InfoItem
+        title="تلفن همراه"
+        value={`0${user.mobile}`}
+        verified={user.isMobileVerified}
+      />
+      <InfoItem
+        title="ایمیل"
+        value={user.email}
+        verified={user.isEmailVerified}
+      />
       <InfoItem
         title="سطح دسترسی"
-        value={user.isEmployee ? 'مسئول' : 'کاربر'}
+        value={user.isEmployee ? 'مسئول' : 'کاربر عادی'}
       />
     </InfoBox>
   );
