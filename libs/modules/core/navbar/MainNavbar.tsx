@@ -4,12 +4,12 @@ import { getServerSession } from 'next-auth';
 
 const MainNavbar = async () => {
   const session = await getServerSession(authConfig);
-  console.log(session);
+  const userTitle = session?.user.name ?? 'کاربر وب‌ سایت';
 
   return (
     <Navbar>
       <PageTitle />
-      {session ? <UserTray userTitle="علی ناصری" /> : null}
+      {session ? <UserTray userTitle={userTitle} /> : null}
     </Navbar>
   );
 };
