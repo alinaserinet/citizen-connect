@@ -1,7 +1,8 @@
-import type { User } from '@types';
+import messages from '@data/messages';
+import type { HttpClient } from '@libs/bridges';
+import type { User, UserInput } from '@types';
 
-import type { HttpClient } from '../../bridges';
-import type { ProfileResponse } from './types';
+import type { ProfileResponse, UpdateRequest, UpdateResponse } from './types';
 
 export default class UserService {
   public constructor(
@@ -32,7 +33,16 @@ export default class UserService {
     };
   }
 
-  public updateProfile(data: any) {
-    return data;
+  public async updateProfile(data: Partial<UserInput>) {
+    const { code } = await this.client.put<UpdateRequest, UpdateResponse>(
+      `${this.baseUrl}/profile`,
+      {
+        email: data.email,
+        first_name: data.firstName,
+        last_name: data.lastName,
+        national_code: data.nationalCode,
+      },
+    );
+    return messages[code];
   }
 }

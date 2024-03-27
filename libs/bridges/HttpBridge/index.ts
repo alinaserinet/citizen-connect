@@ -33,6 +33,7 @@ export default class HttpBridge {
       const url = this.baseUrl + endPoint;
       const requestInit: RequestInit = {
         method: 'GET',
+        cache: 'no-cache',
         headers: {
           ...defaultHeaders,
           Authorization: generateBearerToken(await this.tokenHandler()),

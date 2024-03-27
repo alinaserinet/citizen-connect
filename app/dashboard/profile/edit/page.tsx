@@ -1,9 +1,9 @@
 import { Card, CardBody, CardHeader } from '@libs/components';
 import { ProfileEditBox } from '@libs/modules';
-import { userServerService } from '@libs/services';
+import { userService } from '@libs/services';
 
 const EditProfile = async () => {
-  const user = await userServerService.getProfile();
+  const user = await userService.server.getProfile();
 
   if (!user) {
     return <div>کاربر یافت نشد</div>;

@@ -1,10 +1,12 @@
 import { Card, CardBody, CardHeader } from '@libs/components';
 import { ProfileInfo } from '@libs/modules';
-import { userServerService } from '@libs/services';
+import { userService } from '@libs/services';
 import Link from 'next/link';
 
 const Profile = async () => {
-  const user = await userServerService.getProfile();
+  const user = await userService.server.getProfile();
+
+  console.log(user);
 
   if (!user) {
     return <div>کاربر یافت نشد</div>;

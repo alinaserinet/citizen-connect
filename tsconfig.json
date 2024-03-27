@@ -21,8 +21,7 @@
       "@libs/assets/*": ["./libs/assets/*"],
       "@libs/*": ["./libs/*"],
       "@types": ["./types/index.ts"],
-      "@data/base": ["./data/base/index.ts"],
-      "@data/errors": ["./data/errors/index.ts"],
+      "@data/*": ["./data/*"],
       "@config": ["./config/index.ts"]
     }
   },

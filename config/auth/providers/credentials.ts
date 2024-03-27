@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { authServerService } from '@libs/services';
+import { authService } from '@libs/services';
 import { jwtDecode } from 'jwt-decode';
 import type { Awaitable, User } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
@@ -24,7 +24,7 @@ export default CredentialsProvider({
     if (!mobile || !otp) return null;
 
     try {
-      const res = await authServerService.entry(mobile, otp);
+      const res = await authService.server.entry(mobile, otp);
       const decoded = jwtDecode<JWTDecoded>(res.access_token);
       return await ({
         accessToken: res.access_token,

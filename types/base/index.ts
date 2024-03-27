@@ -1,4 +1,5 @@
 export * from './AppError';
+export type { default as AppMessage } from './AppMessage';
 export type { default as ErrorChecker } from './ErrorChecker';
 export type { default as ErrorHandler } from './ErrorHandler';
 export type { default as ErrorMiddleware } from './ErrorMiddleware';

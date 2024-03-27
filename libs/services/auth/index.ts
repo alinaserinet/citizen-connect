@@ -3,5 +3,7 @@ import { authHttpClient, authHttpServer } from '@libs/bridges';
 
 import AuthService from './AuthService';
 
-export const authClientService = new AuthService('/auth', authHttpClient);
-export const authServerService = new AuthService('/auth', authHttpServer);
+export const authService = {
+  client: new AuthService('/auth', authHttpClient),
+  server: new AuthService('/auth', authHttpServer),
+};
