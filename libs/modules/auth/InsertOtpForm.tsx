@@ -51,11 +51,7 @@ const InsertOtpForm = ({ mobile }: InsertOtpFormProps) => {
           <Input id="code" ltr {...register('code')} type="number" />
           <FormFieldError message={errors.code?.message} />
         </div>
-        <Button
-          className="text-sm font-semibold"
-          type="submit"
-          disabled={isLoading}
-        >
+        <Button color="success" type="submit" disabled={isLoading}>
           ورود به حساب
         </Button>
       </div>

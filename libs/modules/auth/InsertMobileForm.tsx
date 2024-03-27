@@ -52,11 +52,7 @@ const InsertMobileForm = ({
           />
           <FormFieldError message={errors.mobile?.message} />
         </div>
-        <Button
-          className="text-sm font-semibold"
-          type="submit"
-          disabled={isLoading}
-        >
+        <Button color="success" type="submit" disabled={isLoading}>
           ارسال کد تایید
         </Button>
       </div>
