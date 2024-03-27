@@ -34,7 +34,7 @@ const InsertOtpForm = ({ mobile }: InsertOtpFormProps) => {
     const result = await signIn('credentials', {
       mobile,
       otp: data.code,
-      redirect: false,
+      redirect: true,
       callbackUrl: '/',
     }).finally(() => setIsLoading(false));
 
