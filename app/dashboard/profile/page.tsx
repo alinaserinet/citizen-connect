@@ -1,13 +1,21 @@
+import { Card, CardBody, CardHeader } from '@libs/components';
+import { ProfileInfo } from '@libs/modules';
 import { userServerService } from '@libs/services';
 
 const Profile = async () => {
   const user = await userServerService.getProfile();
-  console.log(user);
+
+  if (!user) {
+    return <div>کاربر یافت نشد</div>;
+  }
 
   return (
-    <div>
-      <div>صفحه کاربر</div>
-    </div>
+    <Card>
+      <CardHeader className="text-start">اطلاعات کاربری</CardHeader>
+      <CardBody className="p-6">
+        <ProfileInfo user={user} />
+      </CardBody>
+    </Card>
   );
 };
 export default Profile;

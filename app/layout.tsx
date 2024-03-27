@@ -23,8 +23,8 @@ export default async function RootLayout({
   const session = await getServerSession(authConfig);
   return (
     <html lang="fa" dir="rtl">
-      <body>
-        <Sidebar>
+      <body className="text-[0.8rem]">
+        <Sidebar opened={false}>
           <SideNav>
             <LogoBar />
             <Menu items={mainMenu} />

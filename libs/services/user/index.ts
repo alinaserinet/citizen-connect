@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { userHttpClient, userHttpServer } from '@libs/bridges';
 
 import UserService from './UserService';
