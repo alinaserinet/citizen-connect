@@ -44,6 +44,7 @@ export const ProfileEditBox = ({ user }: ProfileEditProps) => {
       console.log(res);
 
       router.push('/dashboard/profile');
+      router.refresh();
     } catch (error) {
       console.log(error);
     }
