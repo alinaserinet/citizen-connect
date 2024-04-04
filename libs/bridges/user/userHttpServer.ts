@@ -12,7 +12,7 @@ const accessTokenHandler: TokenHandler = async () => {
 };
 
 const userHttpServer = new HttpBridge(
-  'http://localhost:8000',
+  process.env.MAIN_BASE_API_URL,
   checkFetchErrors,
   generalClientErrorHandler,
   accessTokenHandler,

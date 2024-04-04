@@ -11,7 +11,7 @@ const accessTokenHandler: TokenHandler = async () => {
 };
 
 const userHttpClient = new HttpBridge(
-  'http://localhost:8000',
+  process.env.NEXT_PUBLIC_BASE_API_URL,
   checkFetchErrors,
   generalClientErrorHandler,
   accessTokenHandler,
