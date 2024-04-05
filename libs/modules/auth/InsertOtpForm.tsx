@@ -79,7 +79,7 @@ const InsertOtpForm = ({
       mobile: `0${mobile}`,
       otp: data.code,
       redirect: false,
-      callbackUrl: '/',
+      callbackUrl: '/dashboard/profile',
     }).finally(() => setIsLoading(false));
 
     if (result?.error) {
@@ -92,7 +92,7 @@ const InsertOtpForm = ({
     }
 
     if (result?.ok) {
-      router.replace('/');
+      router.replace('/dashboard/profile');
       router.refresh();
     }
   };
