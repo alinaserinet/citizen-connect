@@ -1,1 +1,1 @@
-export type HttpErrorKey = '401' | '404' | 'ERR_NETWORK' | '500';
+export type HttpErrorKey = '401' | '404' | '500' | 'ERR_NETWORK';
