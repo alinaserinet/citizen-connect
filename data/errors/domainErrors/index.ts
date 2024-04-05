@@ -5,7 +5,7 @@ import DomainErrorCodes from './codes';
 const domainErrors: Record<DomainErrorCodes, AppError> = {
   [DomainErrorCodes.DuplicateOtpRequest]: {
     type: 'domain',
-    message: 'درخواست تکراری برای کد احراز هویت',
+    message: 'درخواست تکراری است، لطفا صبر کنید',
   },
   [DomainErrorCodes.InvalidOtpCode]: {
     type: 'domain',

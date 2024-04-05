@@ -25,7 +25,12 @@ const LoginBox = ({ className }: LoginBoxProps) => {
           setOtpExpireUnix={setOtpExpireUnix}
         />
       ) : (
-        <InsertOtpForm mobile={mobile} expireUnix={otpExpireUnix} />
+        <InsertOtpForm
+          mobile={mobile}
+          expireUnix={otpExpireUnix}
+          setMobile={setMobile}
+          setOtpExpireUnix={setOtpExpireUnix}
+        />
       )}
     </CardBody>
   );

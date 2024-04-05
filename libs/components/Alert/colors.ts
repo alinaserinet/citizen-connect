@@ -1,9 +1,10 @@
+import type { AlertColor } from '@types';
+
 import type { SectionRecord } from './types';
 
-export type Color = 'error' | 'info' | 'success' | 'warning';
 type ColorMode = 'fill' | 'normal';
 type ColorModeRecord = Record<ColorMode, SectionRecord>;
-type ColorRecord = Record<Color, ColorModeRecord>;
+type ColorRecord = Record<AlertColor, ColorModeRecord>;
 
 export const colorsClassName: ColorRecord = {
   error: {

@@ -5,10 +5,9 @@ import {
   Warning,
   WarningCircle,
 } from '@phosphor-icons/react';
+import type { AlertColor } from '@types';
 
-import type { Color } from './colors';
-
-const icons: Record<Color, Icon> = {
+const icons: Record<AlertColor, Icon> = {
   error: WarningCircle,
   info: Info,
   success: CheckCircle,

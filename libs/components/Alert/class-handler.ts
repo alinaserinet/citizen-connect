@@ -1,13 +1,13 @@
+import type { AlertColor } from '@types';
 import { twMerge } from 'tailwind-merge';
 
-import type { Color } from './colors';
 import { colorsClassName } from './colors';
 import type { Genre } from './genres';
 import { genresClassName } from './genres';
 import type { SectionRecord } from './types';
 
 export function generateClassName(
-  color: Color,
+  color: AlertColor,
   genre: Genre,
   fill: boolean,
 ): SectionRecord {

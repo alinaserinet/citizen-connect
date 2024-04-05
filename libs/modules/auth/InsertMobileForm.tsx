@@ -1,6 +1,7 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, FormFieldError, Input, Label } from '@libs/components';
+import { useSetAlert } from '@libs/providers';
 import { authService } from '@libs/services';
 import type { Dispatch, SetStateAction } from 'react';
 import { useState } from 'react';
@@ -20,6 +21,7 @@ const InsertMobileForm = ({
   setOtpExpireUnix,
 }: InsertMobileFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
+  const setAlert = useSetAlert();
 
   const {
     register,
@@ -30,17 +32,36 @@ const InsertMobileForm = ({
   });
 
   const handleLogin: SubmitHandler<MobileFormSchema> = async data => {
-    setIsLoading(true);
-    const result = await authService.client
-      .getOtp(data.mobile)
-      .finally(() => setIsLoading(false));
-    setMobile(result.mobile);
-    setOtpExpireUnix(result.expire_unix);
+    try {
+      setAlert(null);
+      setIsLoading(true);
+      const result = await authService.client
+        .getOtp(data.mobile)
+        .finally(() => setIsLoading(false));
+      setAlert({
+        message: 'عملیات موفق',
+        color: 'success',
+        hint: 'کد تایید ارسال شد',
+      });
+      setMobile(result.mobile);
+      setOtpExpireUnix(result.expire_unix);
+    } catch (error) {
+      if (typeof error === 'string') {
+        setAlert({
+          message: 'عملیات ناموفق',
+          color: 'error',
+          hint: error,
+        });
+      }
+    }
   };
 
   return (
     <form onSubmit={handleSubmit(handleLogin)}>
       <div className="flex flex-col gap-6">
+        <span className="text-xs text-gray-500">
+          برای ورود یا ثبت نام لطفا شماره تلفن خود را وارد کنید
+        </span>
         <div>
           <Label htmlFor="mobile">تلفن همراه</Label>
           <Input
