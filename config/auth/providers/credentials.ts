@@ -26,12 +26,21 @@ export default CredentialsProvider({
     try {
       const res = await authService.server.entry(mobile, otp);
       const decoded = jwtDecode<JWTDecoded>(res.access_token);
+
       return await ({
         accessToken: res.access_token,
         refreshToken: res.refresh_token,
         name: decoded.full_name,
       } as Awaitable<User>);
-    } catch (_) {
+    } catch (error) {
+      if (typeof error === 'string') {
+        throw new Error(error);
+      }
+
+      if (error instanceof Error) {
+        throw error;
+      }
+
       return null;
     }
   },

@@ -28,6 +28,14 @@ const httpErrors: Record<HttpErrorKey, AppError> = {
     fixed: false,
     showRefreshBtn: false,
   },
+  500: {
+    message: 'خطایی در سرور رخ داد',
+    description: 'خطای سرور',
+    type: 'http',
+    icon: WifiSlash,
+    fixed: false,
+    showRefreshBtn: false,
+  },
 };
 
 export default httpErrors;

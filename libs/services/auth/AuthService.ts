@@ -1,5 +1,4 @@
 import type { HttpClient } from '../../bridges';
-
 import type {
   EntryRequest,
   EntryResponse,

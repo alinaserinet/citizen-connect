@@ -73,16 +73,27 @@ const InsertOtpForm = ({
 
   const handleEntry: SubmitHandler<OtpFormSchema> = async data => {
     if (!mobile) return;
+    setAlert(null);
     setIsLoading(true);
     const result = await signIn('credentials', {
-      mobile,
+      mobile: `0${mobile}`,
       otp: data.code,
-      redirect: true,
+      redirect: false,
       callbackUrl: '/',
     }).finally(() => setIsLoading(false));
 
+    if (result?.error) {
+      setAlert({
+        message: 'عملیات ناموفق',
+        color: 'error',
+        hint: result.error,
+      });
+      return;
+    }
+
     if (result?.ok) {
-      return router.replace('/');
+      router.replace('/');
+      router.refresh();
     }
   };
 
