@@ -13,7 +13,7 @@ export const ProfileInfo = ({ user }: ProfileInfoProps) => {
       <InfoItem title="کد ملی" value={user.nationalCode} />
       <InfoItem
         title="تلفن همراه"
-        value={`0${user.mobile}`}
+        value={user.mobile}
         verified={user.isMobileVerified}
       />
       <InfoItem
