@@ -60,10 +60,16 @@ const InsertOtpForm = ({
   const {
     register,
     handleSubmit,
+    setFocus,
     formState: { errors },
   } = useForm<OtpFormSchema>({
     resolver: zodResolver(otpFormSchema),
   });
+
+  useEffect(() => {
+    setFocus('code');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mobile, expireUnix]);
 
   const handleEntry: SubmitHandler<OtpFormSchema> = async data => {
     if (!mobile) return;
@@ -113,7 +119,7 @@ const InsertOtpForm = ({
           <Input id="code" ltr {...register('code')} type="number" />
           <FormFieldError message={errors.code?.message} />
         </div>
-        <Button color="success" type="submit" disabled={isLoading}>
+        <Button color="success" type="submit" loading={isLoading}>
           ورود به حساب
         </Button>
       </div>

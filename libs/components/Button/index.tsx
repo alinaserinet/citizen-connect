@@ -15,6 +15,7 @@ interface ButtonProps
   genre?: Genre;
   size?: Size;
   color?: Color;
+  loading?: boolean;
 }
 
 const Button = ({
@@ -23,6 +24,7 @@ const Button = ({
   genre = 'fill',
   color = 'primary',
   size = 'base',
+  loading = false,
   ...rest
 }: ButtonProps) => {
   const localClassName = generateClassName(genre, color, size);
@@ -34,8 +36,13 @@ const Button = ({
         className,
       )}
       {...rest}
+      disabled={loading}
     >
-      {children}
+      {loading ? (
+        <span className="animate-pulse">لطفا صبر کنید...</span>
+      ) : (
+        children
+      )}
     </button>
   );
 };

@@ -5,7 +5,7 @@ import { LoginBox } from '@libs/modules';
 
 const page = () => {
   return (
-    <Container className="max-w-sm py-8">
+    <Container className="max-w-sm px-6 py-8">
       <AlertBox />
       <Card>
         <CardHeader>ورود به حساب</CardHeader>

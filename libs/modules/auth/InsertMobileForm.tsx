@@ -4,7 +4,7 @@ import { Button, FormFieldError, Input, Label } from '@libs/components';
 import { useSetAlert } from '@libs/providers';
 import { authService } from '@libs/services';
 import type { Dispatch, SetStateAction } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
@@ -26,10 +26,16 @@ const InsertMobileForm = ({
   const {
     register,
     handleSubmit,
+    setFocus,
     formState: { errors },
   } = useForm<MobileFormSchema>({
     resolver: zodResolver(mobileFormSchema),
   });
+
+  useEffect(() => {
+    setFocus('mobile');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleLogin: SubmitHandler<MobileFormSchema> = async data => {
     try {
@@ -73,7 +79,7 @@ const InsertMobileForm = ({
           />
           <FormFieldError message={errors.mobile?.message} />
         </div>
-        <Button color="success" type="submit" disabled={isLoading}>
+        <Button color="success" type="submit" loading={isLoading}>
           ارسال کد تایید
         </Button>
       </div>
