@@ -59,6 +59,10 @@ const domainErrors: Record<DomainErrorCodes, AppError> = {
     type: 'domain',
     message: 'عنوان وارد نشده است',
   },
+  [DomainErrorCodes.SendSMSFailed]: {
+    type: 'domain',
+    message: 'مشکلی در ارسال پیامک رخ داد',
+  },
 };
 
 export default domainErrors;

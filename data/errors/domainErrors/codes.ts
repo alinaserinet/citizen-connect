@@ -13,6 +13,7 @@ const enum DomainErrorCodes {
   IDIsNotNumberString,
   RequestNotFound,
   RequestIllegalAccess,
+  SendSMSFailed,
 }
 
 export default DomainErrorCodes;
