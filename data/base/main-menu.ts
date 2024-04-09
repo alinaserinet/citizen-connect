@@ -8,7 +8,7 @@ const mainMenu: MenuItem[] = [
   // { id: 1, href: '/profile', title: 'تنظیمات امنیتی', icon: ShieldCheckered },
   {
     id: 1,
-    href: '/dashboard/profile',
+    href: '/dashboard/requests',
     title: 'درخواست مشکلات',
     icon: ChatCenteredText,
   },
