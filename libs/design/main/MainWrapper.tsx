@@ -10,7 +10,7 @@ const MainWrapper = ({ children, className }: MainWrapperProps) => {
   return (
     <main
       className={twMerge(
-        'mr-0 flex flex-col gap-3 p-3 pr-1.5 lg:mr-60',
+        'mr-0 flex flex-col gap-4 p-3 lg:mr-60 lg:pr-1.5',
         className,
       )}
     >
