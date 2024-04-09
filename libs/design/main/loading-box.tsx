@@ -11,7 +11,7 @@ export const LoadingBox = ({ message = 'لطفا صبر کنید' }: LoadingBoxP
   return (
     <CenterWrapper className="min-h-52 min-w-72 rounded-xl bg-white/40 p-6 shadow-sm">
       <span className="loading loading-dots loading-lg text-gray-400" />
-      {message}
+      <span className="text-gray-700">{message}</span>
     </CenterWrapper>
   );
 };
