@@ -1,5 +1,7 @@
+import { LoadingBox } from '@libs/design';
+
 const Loading = () => {
-  return <div>loading...</div>;
+  return <LoadingBox />;
 };
 
 export default Loading;
