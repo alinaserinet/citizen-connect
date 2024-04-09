@@ -1,6 +1,8 @@
 'use client';
 import './loading.css';
 
+import { Card, CardBody } from '@libs/components';
+
 import { CenterWrapper } from './center-wrapper';
 
 interface LoadingBoxProps {
@@ -9,9 +11,13 @@ interface LoadingBoxProps {
 
 export const LoadingBox = ({ message = 'لطفا صبر کنید' }: LoadingBoxProps) => {
   return (
-    <CenterWrapper className="min-h-52 min-w-72 rounded-xl bg-white/40 p-6 shadow-sm">
-      <span className="loading loading-dots loading-lg text-gray-400" />
-      <span className="text-gray-700">{message}</span>
+    <CenterWrapper>
+      <Card className="size-52 bg-white/40">
+        <CardBody className="flex h-full flex-col items-center justify-center">
+          <span className="loading loading-dots loading-lg text-gray-400" />
+          <span className="text-gray-700">{message}</span>
+        </CardBody>
+      </Card>
     </CenterWrapper>
   );
 };
