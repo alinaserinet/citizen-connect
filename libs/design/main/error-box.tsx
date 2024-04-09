@@ -9,31 +9,26 @@ interface ErrorBoxProps {
   error: unknown;
 }
 
-export const ErrorBox = ({ error, icon: Icon = Warning }: ErrorBoxProps) => {
+const getErrorMessage = (error: unknown) => {
   if (typeof error === 'string') {
-    return (
-      <CenterWrapper className="rounded-xl bg-white p-6 text-red-900 shadow-sm">
-        <Icon size={40} className="text-red-700" />
-        <span>{error}</span>
-      </CenterWrapper>
-    );
+    return error;
   }
 
   if (error instanceof Error) {
-    return (
-      <CenterWrapper>
-        <Icon />
-        <span>{error.message}</span>
-      </CenterWrapper>
-    );
+    return error.message;
   }
 
-  console.error(error);
+  console.error('error: ', error);
 
+  return 'مشکلی رخ داد';
+};
+
+export const ErrorBox = ({ error, icon: Icon = Warning }: ErrorBoxProps) => {
+  const errorMessage = getErrorMessage(error);
   return (
-    <CenterWrapper>
-      <Icon />
-      <span>مشکلی رخ داد</span>
+    <CenterWrapper className="min-h-52 min-w-72 rounded-xl bg-white/40 p-6 shadow-sm">
+      <Icon size={40} className="text-red-500" />
+      <span className="font-semibold text-red-800">{errorMessage}</span>
     </CenterWrapper>
   );
 };
