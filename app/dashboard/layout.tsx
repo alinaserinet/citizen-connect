@@ -16,7 +16,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           <Menu items={mainMenu} />
         </SideNav>
       </Sidebar>
-      <MainWrapper>
+      <MainWrapper className="relative h-screen">
         <MainNavbar />
         {children}
       </MainWrapper>
