@@ -1,4 +1,4 @@
-import type { HttpClient } from '../../bridges';
+import type { HttpBridge } from '../../bridges';
 import type {
   EntryRequest,
   EntryResponse,
@@ -10,7 +10,7 @@ import type {
 export default class AuthService {
   public constructor(
     private readonly baseUrl: string,
-    private readonly client: HttpClient,
+    private readonly client: HttpBridge,
   ) {}
 
   public getOtp(mobile: string, abortSignal?: AbortSignal) {

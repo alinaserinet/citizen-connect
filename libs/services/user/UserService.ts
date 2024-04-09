@@ -1,5 +1,5 @@
 import messages from '@data/messages';
-import type { HttpClient } from '@libs/bridges';
+import type { HttpBridge } from '@libs/bridges';
 import type { User, UserInput } from '@types';
 
 import type { ProfileResponse, UpdateRequest, UpdateResponse } from './types';
@@ -7,7 +7,7 @@ import type { ProfileResponse, UpdateRequest, UpdateResponse } from './types';
 export default class UserService {
   public constructor(
     private readonly baseUrl: string,
-    private readonly client: HttpClient,
+    private readonly client: HttpBridge,
   ) {
     this.getProfile = this.getProfile.bind(this);
   }
