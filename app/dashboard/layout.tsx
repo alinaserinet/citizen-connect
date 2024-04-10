@@ -12,7 +12,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
     <>
       <Sidebar opened={false}>
         <SideNav>
-          <LogoBar />
+          <LogoBar logoSrc="/next.svg" />
           <Menu items={mainMenu} />
         </SideNav>
       </Sidebar>
