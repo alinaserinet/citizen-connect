@@ -2,7 +2,7 @@ import '@libs/assets/fonts/fonts.css';
 import '@libs/assets/styles/globals.css';
 
 import { authConfig } from '@config';
-import { AlertProvider, UserProvider } from '@libs/providers';
+import { AlertProvider, SidebarProvider, UserProvider } from '@libs/providers';
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import type { ReactNode } from 'react';
@@ -22,7 +22,9 @@ export default async function RootLayout({
     <html lang="fa" dir="rtl">
       <body className="text-[0.8rem]">
         <UserProvider session={session}>
-          <AlertProvider>{children}</AlertProvider>
+          <SidebarProvider>
+            <AlertProvider>{children}</AlertProvider>
+          </SidebarProvider>
         </UserProvider>
       </body>
     </html>

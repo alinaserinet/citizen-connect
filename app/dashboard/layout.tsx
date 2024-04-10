@@ -10,7 +10,7 @@ interface DashboardLayoutProps {
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
     <>
-      <Sidebar opened={false}>
+      <Sidebar>
         <SideNav>
           <LogoBar logoSrc="/next.svg" />
           <Menu items={mainMenu} />
