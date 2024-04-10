@@ -16,5 +16,6 @@ module.exports = init({
     '@typescript-eslint/no-useless-template-literals': 'off',
     '@typescript-eslint/prefer-promise-reject-errors': 'off',
     '@typescript-eslint/object-curly-spacing': 'off',
+    'import/no-cycle': 'off',
   },
 });

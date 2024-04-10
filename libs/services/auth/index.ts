@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-cycle
-import { authHttpClient, authHttpServer } from '@libs/bridges';
+import { authHttpClient, authHttpServer } from '@libs/bridges/auth';
 
 import AuthService from './AuthService';
 

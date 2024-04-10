@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-cycle
-import { authService } from '@libs/services';
+import { authService } from '@libs/services/auth';
 import { jwtDecode } from 'jwt-decode';
 import type { Awaitable, User } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
