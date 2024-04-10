@@ -1,4 +1,5 @@
 'use client';
+import { Card, CardBody } from '@libs/components';
 import type { Icon } from '@phosphor-icons/react';
 import { Warning } from '@phosphor-icons/react';
 
@@ -26,9 +27,13 @@ const getErrorMessage = (error: unknown) => {
 export const ErrorBox = ({ error, icon: Icon = Warning }: ErrorBoxProps) => {
   const errorMessage = getErrorMessage(error);
   return (
-    <CenterWrapper className="min-h-52 min-w-72 rounded-xl bg-white/40 p-6 shadow-sm">
-      <Icon size={40} className="text-red-500" />
-      <span className="font-semibold text-red-800">{errorMessage}</span>
+    <CenterWrapper>
+      <Card className="size-52 bg-white/40">
+        <CardBody className="flex h-full flex-col items-center justify-center gap-3">
+          <Icon size={40} className="text-red-500" />
+          <span className="font-semibold text-red-800">{errorMessage}</span>
+        </CardBody>
+      </Card>
     </CenterWrapper>
   );
 };
