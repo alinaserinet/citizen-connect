@@ -11,7 +11,7 @@ const Sidebar = ({ children, className, opened = false }: SidebarProps) => {
   return (
     <aside
       className={twMerge(
-        'fixed top-0 h-screen w-60 p-3 pl-1.5 lg:start-0',
+        'fixed top-0 z-50 h-screen w-60 lg:start-0 lg:p-3 lg:pl-1.5',
         className,
         opened ? 'start-0' : '-start-60',
       )}

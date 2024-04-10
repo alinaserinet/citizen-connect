@@ -51,7 +51,7 @@ export const CreateRequestBox = ({
   return (
     <>
       <Card>
-        <CardBody className="grid grid-cols-3 gap-6">
+        <CardBody className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           <div>
             <Label htmlFor="location">منطقه</Label>
             <Select id="location" options={locationsOptions} />
@@ -79,12 +79,12 @@ export const CreateRequestBox = ({
         </CardBody>
       </Card>
       <Card>
-        <CardBody className="grid grid-cols-3 items-end gap-6">
+        <CardBody className="grid grid-cols-1 items-end gap-6 lg:grid-cols-3">
           <div>
             <Label htmlFor="title">اولویت</Label>
             <Select id="category" options={prioritiesOptions} />
           </div>
-          <Button color="success" className="col-start-3">
+          <Button color="success" className="lg:col-start-3">
             ثبت درخواست
           </Button>
         </CardBody>
