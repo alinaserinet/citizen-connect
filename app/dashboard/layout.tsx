@@ -1,5 +1,12 @@
 import { mainMenu } from '@data/base';
-import { LogoBar, MainWrapper, Menu, Sidebar, SideNav } from '@libs/design';
+import {
+  AlertBox,
+  LogoBar,
+  MainWrapper,
+  Menu,
+  Sidebar,
+  SideNav,
+} from '@libs/design';
 import { MainNavbar } from '@libs/modules';
 import type { ReactNode } from 'react';
 
@@ -18,6 +25,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       </Sidebar>
       <MainWrapper className="relative min-h-screen">
         <MainNavbar />
+        <AlertBox />
         {children}
       </MainWrapper>
     </>
