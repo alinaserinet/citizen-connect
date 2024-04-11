@@ -1,7 +1,7 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-interface TbodyProps
+interface TBodyProps
   extends DetailedHTMLProps<
     HTMLAttributes<HTMLTableSectionElement>,
     HTMLTableSectionElement
@@ -9,7 +9,7 @@ interface TbodyProps
   children: ReactNode;
 }
 
-const Tbody = ({ children, className, ...rest }: TbodyProps) => {
+const TBody = ({ children, className, ...rest }: TBodyProps) => {
   return (
     <tbody
       {...rest}
@@ -22,4 +22,4 @@ const Tbody = ({ children, className, ...rest }: TbodyProps) => {
     </tbody>
   );
 };
-export default Tbody;
+export default TBody;
