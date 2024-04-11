@@ -2,7 +2,7 @@ export interface Request {
   id: number;
   title: string;
   description: string | null;
-  user_id: number;
+  userId: number;
   categoryId: number;
   departmentId: number;
   responsibleId: number | null;

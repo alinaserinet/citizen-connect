@@ -9,7 +9,7 @@ export function modifyRequestRes(requestRes: RequestRes): Request {
     description: requestRes.description,
     status: requestRes.status,
     priority: requestRes.priority,
-    user_id: requestRes.user_id,
+    userId: requestRes.user_id,
     departmentId: requestRes.department_id,
     locationId: requestRes.location_id,
     responsibleId: requestRes.responsible_id,
