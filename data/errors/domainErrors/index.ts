@@ -49,7 +49,7 @@ const domainErrors: Record<DomainErrorCodes, AppError> = {
   },
   [DomainErrorCodes.RequestIllegalAccess]: {
     type: 'domain',
-    message: 'دسترسی لازم برای مشاهده درخواست را ندارد',
+    message: 'دسترسی لازم برای مشاهده درخواست را ندارید',
   },
   [DomainErrorCodes.RequestNotFound]: {
     type: 'domain',

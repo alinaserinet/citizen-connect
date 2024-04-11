@@ -31,7 +31,9 @@ export const ErrorBox = ({ error, icon: Icon = Warning }: ErrorBoxProps) => {
       <Card className="size-52 bg-white/40">
         <CardBody className="flex h-full flex-col items-center justify-center gap-3">
           <Icon size={40} className="text-red-500" />
-          <span className="font-semibold text-red-800">{errorMessage}</span>
+          <span className="text-center font-semibold leading-7 text-red-800">
+            {errorMessage}
+          </span>
         </CardBody>
       </Card>
     </CenterWrapper>
