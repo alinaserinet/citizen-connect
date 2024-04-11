@@ -1,7 +1,7 @@
 import type { DetailedHTMLProps, ReactNode, ThHTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-interface THProps
+interface ThProps
   extends DetailedHTMLProps<
     ThHTMLAttributes<HTMLTableCellElement>,
     HTMLTableCellElement
@@ -9,7 +9,7 @@ interface THProps
   children: ReactNode;
 }
 
-const TH = ({ children, className, ...rest }: THProps) => {
+const Th = ({ children, className, ...rest }: ThProps) => {
   return (
     <th
       {...rest}
@@ -22,4 +22,4 @@ const TH = ({ children, className, ...rest }: THProps) => {
     </th>
   );
 };
-export default TH;
+export default Th;

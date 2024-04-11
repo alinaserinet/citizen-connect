@@ -1,7 +1,7 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-interface TRProps
+interface TrProps
   extends DetailedHTMLProps<
     HTMLAttributes<HTMLTableRowElement>,
     HTMLTableRowElement
@@ -9,11 +9,11 @@ interface TRProps
   children: ReactNode;
 }
 
-const TR = ({ children, className, ...rest }: TRProps) => {
+const Tr = ({ children, className, ...rest }: TrProps) => {
   return (
     <tr {...rest} className={twMerge(className)}>
       {children}
     </tr>
   );
 };
-export default TR;
+export default Tr;
