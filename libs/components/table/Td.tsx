@@ -14,7 +14,7 @@ const Td = ({ children, className, ...rest }: TdProps) => {
     <td
       {...rest}
       className={twMerge(
-        'whitespace-nowrap px-4 py-4 text-sm font-medium',
+        'whitespace-nowrap px-4 py-4 text-[0.8rem]',
         className,
       )}
     >

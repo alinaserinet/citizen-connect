@@ -6,7 +6,7 @@ interface ThProps
     ThHTMLAttributes<HTMLTableCellElement>,
     HTMLTableCellElement
   > {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const Th = ({ children, className, ...rest }: ThProps) => {
