@@ -14,7 +14,7 @@ const Table = ({ children, className, ...rest }: TableProps) => {
     <table
       {...rest}
       className={twMerge(
-        'min-w-full divide-y divide-gray-200 dark:divide-gray-700',
+        'min-w-full divide-y divide-gray-200 text-xs dark:divide-gray-700',
         className,
       )}
     >

@@ -1,7 +1,7 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-interface TheadProps
+interface THeadProps
   extends DetailedHTMLProps<
     HTMLAttributes<HTMLTableSectionElement>,
     HTMLTableSectionElement
@@ -9,7 +9,7 @@ interface TheadProps
   children: ReactNode;
 }
 
-const THead = ({ children, className, ...rest }: TheadProps) => {
+const THead = ({ children, className, ...rest }: THeadProps) => {
   return (
     <thead
       {...rest}

@@ -14,7 +14,7 @@ const Th = ({ children, className, ...rest }: ThProps) => {
     <th
       {...rest}
       className={twMerge(
-        'px-12 py-3.5 text-left text-sm font-normal text-gray-500 rtl:text-right dark:text-gray-400',
+        'description px-12 py-3.5 text-left font-normal text-gray-500 rtl:text-right dark:text-gray-400',
         className,
       )}
     >
