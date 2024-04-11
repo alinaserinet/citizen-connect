@@ -1,13 +1,29 @@
+'use client';
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Button,
   Card,
   CardBody,
+  CardHeader,
+  Divider,
+  FormFieldError,
   Input,
   Label,
   Select,
   Textarea,
 } from '@libs/components';
 import type { Category, Department, Location } from '@types';
+import { useForm } from 'react-hook-form';
+
+import { useCreateRequestHandler } from './form-handler';
+import { createFormSchema } from './form-shema';
+import type { CreateRequestForm } from './form-type';
+import {
+  getPrioritiesOptions,
+  prepareCategoriesOptions,
+  prepareDepartmentsOptions,
+  prepareLocationOptions,
+} from './options';
 
 interface CreateRequestBoxProps {
   departments: Department[];
@@ -20,75 +36,85 @@ export const CreateRequestBox = ({
   departments,
   locations,
 }: CreateRequestBoxProps) => {
-  const categoriesOptions = categories.map(({ id, title }) => ({
-    label: title,
-    value: id,
-  }));
-  const departmentsOptions = departments.map(({ id, title }) => ({
-    label: title,
-    value: id,
-  }));
-  const locationsOptions = locations.map(({ id, title }) => ({
-    label: title,
-    value: id,
-  }));
+  const categoriesOptions = prepareCategoriesOptions(categories);
+  const departmentsOptions = prepareDepartmentsOptions(departments);
+  const locationsOptions = prepareLocationOptions(locations);
+  const prioritiesOptions = getPrioritiesOptions();
 
-  const prioritiesOptions = [
-    {
-      label: 'کم',
-      value: 0,
-    },
-    {
-      label: 'متوسط',
-      value: 2,
-    },
-    {
-      label: 'زیاد',
-      value: 3,
-    },
-  ];
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<CreateRequestForm>({
+    resolver: zodResolver(createFormSchema),
+  });
+
+  const handleCreateRequest = useCreateRequestHandler();
 
   return (
-    <>
-      <Card>
-        <CardBody className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <div>
-            <Label htmlFor="location">منطقه</Label>
-            <Select id="location" options={locationsOptions} />
+    <Card>
+      <CardHeader>ثبت درخواست جدید</CardHeader>
+      <CardBody>
+        <form onSubmit={handleSubmit(handleCreateRequest)}>
+          <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-3">
+            <div>
+              <Label htmlFor="location">منطقه</Label>
+              <Select
+                id="location"
+                options={locationsOptions}
+                {...register('location')}
+              />
+              <FormFieldError message={errors.location?.message} />
+            </div>
+            <div>
+              <Label htmlFor="department">بخش</Label>
+              <Select
+                id="department"
+                options={departmentsOptions}
+                {...register('department')}
+              />
+              <FormFieldError message={errors.department?.message} />
+            </div>
+            <div>
+              <Label htmlFor="category">دسته بندی</Label>
+              <Select
+                id="category"
+                options={categoriesOptions}
+                {...register('category')}
+              />
+              <FormFieldError message={errors.category?.message} />
+            </div>
+            <Divider className="lg:col-span-3" />
+            <div className="lg:col-span-3">
+              <Label htmlFor="title">عنوان درخواست</Label>
+              <Input id="title" {...register('title')} />
+              <FormFieldError message={errors.title?.message} />
+            </div>
+            <div className="lg:col-span-3">
+              <Label htmlFor="description">توضیحات</Label>
+              <Textarea
+                id="description"
+                rows={5}
+                {...register('description')}
+              />
+              <FormFieldError message={errors.description?.message} />
+            </div>
+            <Divider className="lg:col-span-3" />
+            <div>
+              <Label htmlFor="title">اولویت</Label>
+              <Select
+                id="category"
+                options={prioritiesOptions}
+                {...register('priority')}
+              />
+              <FormFieldError message={errors.priority?.message} />
+            </div>
+            <Button color="success" className="lg:col-start-3" type="submit">
+              ثبت درخواست
+            </Button>
           </div>
-          <div>
-            <Label htmlFor="department">بخش</Label>
-            <Select id="department" options={departmentsOptions} />
-          </div>
-          <div>
-            <Label htmlFor="category">دسته بندی</Label>
-            <Select id="category" options={categoriesOptions} />
-          </div>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardBody className="flex flex-col gap-6">
-          <div>
-            <Label htmlFor="title">عنوان درخواست</Label>
-            <Input id="title" />
-          </div>
-          <div>
-            <Label htmlFor="description">توضیحات</Label>
-            <Textarea id="description" rows={5} />
-          </div>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardBody className="grid grid-cols-1 items-end gap-6 lg:grid-cols-3">
-          <div>
-            <Label htmlFor="title">اولویت</Label>
-            <Select id="category" options={prioritiesOptions} />
-          </div>
-          <Button color="success" className="lg:col-start-3">
-            ثبت درخواست
-          </Button>
-        </CardBody>
-      </Card>
-    </>
+        </form>
+      </CardBody>
+    </Card>
   );
 };

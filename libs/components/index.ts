@@ -5,6 +5,7 @@ export { default as Card } from './Card';
 export { default as CardBody } from './CardBody';
 export { default as CardHeader } from './CardHeader';
 export { default as Container } from './Container';
+export { default as Divider } from './Divider';
 export { default as FormFieldError } from './FormFieldError';
 export { default as Input } from './Input';
 export { default as Label } from './Label';

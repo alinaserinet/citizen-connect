@@ -17,7 +17,7 @@ export interface RequestRes {
 export interface RequestReq {
   title: string;
   description?: string;
-  priority: 0 | 1 | 2;
+  priority: number;
   category: number;
   location: number;
   department: number;

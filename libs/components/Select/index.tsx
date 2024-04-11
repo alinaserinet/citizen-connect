@@ -1,4 +1,5 @@
 import type { DetailedHTMLProps, SelectHTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 
 import SelectNormal from './SelectNormal';
 
@@ -10,7 +11,9 @@ export interface SelectProps
   options: { label: number | string; value: number | string }[];
 }
 
-const Select = (props: SelectProps) => {
-  return <SelectNormal {...props} />;
-};
+const Select = forwardRef<HTMLSelectElement, SelectProps>(
+  (props: SelectProps, ref) => {
+    return <SelectNormal {...props} ref={ref} />;
+  },
+);
 export default Select;
