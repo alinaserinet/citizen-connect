@@ -15,19 +15,19 @@ import { Eye } from '@phosphor-icons/react/dist/ssr/Eye';
 import type { Category, Department, Location, Request } from '@types';
 import Link from 'next/link';
 
-interface RequestsListProps {
+interface UserRequestsListProps {
   requests: Request[];
   categories: Category[];
   locations: Location[];
   departments: Department[];
 }
 
-export const RequestsList = ({
+export const UserRequestsList = ({
   categories,
   locations,
   departments,
   requests,
-}: RequestsListProps) => {
+}: UserRequestsListProps) => {
   return (
     <Card>
       <CardHeader className="flex items-center justify-between bg-white">

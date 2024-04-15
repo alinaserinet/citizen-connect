@@ -16,7 +16,9 @@ export const EmptyRequests = ({
 }: EmptyRequestsProps) => {
   return (
     <CenterWrapper className={twMerge('', className)} mobile={false}>
-      <Card className="h-56 w-96 max-w-full">
+      <Card
+        className={twMerge('w-96 max-w-full', showCreate ? 'h-56' : 'h-12')}
+      >
         <CardHeader className="h-12">{message}</CardHeader>
         {showCreate ? (
           <CardBody className="flex h-[calc(100%-48px)] flex-col items-center justify-center gap-4">

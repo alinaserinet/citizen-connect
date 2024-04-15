@@ -1,13 +1,25 @@
+import { authConfig } from '@config';
 import { ErrorBox } from '@libs/design';
-import { EmptyRequests, RequestsList } from '@libs/modules';
+import {
+  EmployeeRequestsList,
+  EmptyRequests,
+  UserRequestsList,
+} from '@libs/modules';
 import {
   categoryService,
   departmentService,
   locationService,
   requestService,
 } from '@libs/services';
+import { jwtDecode } from 'jwt-decode';
+import { getServerSession } from 'next-auth';
 
 const Requests = async () => {
+  const session = await getServerSession(authConfig);
+  const { isEmployee } = jwtDecode<{ isEmployee: boolean }>(
+    session?.user.accessToken ?? '',
+  );
+
   try {
     const [requests, categories, locations, departments] = await Promise.all([
       requestService.server.getAll(),
@@ -17,11 +29,22 @@ const Requests = async () => {
     ]);
 
     if (!requests.length) {
-      return <EmptyRequests showCreate />;
+      return <EmptyRequests showCreate={!isEmployee} />;
+    }
+
+    if (isEmployee) {
+      return (
+        <EmployeeRequestsList
+          requests={requests}
+          categories={categories}
+          locations={locations}
+          departments={departments}
+        />
+      );
     }
 
     return (
-      <RequestsList
+      <UserRequestsList
         requests={requests}
         categories={categories}
         locations={locations}
