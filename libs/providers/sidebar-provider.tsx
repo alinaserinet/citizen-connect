@@ -4,6 +4,7 @@ import { createContext, useContext, useState } from 'react';
 
 interface Sidebar {
   isOpen: boolean;
+  isEmployee: boolean;
 }
 
 const SidebarContext = createContext<Sidebar | null>(null);
@@ -13,10 +14,17 @@ const SetSidebarContext = createContext<Dispatch<
 
 interface SidebarProviderProps {
   children: ReactNode;
+  isEmployee?: boolean;
 }
 
-export const SidebarProvider = ({ children }: SidebarProviderProps) => {
-  const [sidebar, setSidebar] = useState<Sidebar>({ isOpen: false });
+export const SidebarProvider = ({
+  children,
+  isEmployee = false,
+}: SidebarProviderProps) => {
+  const [sidebar, setSidebar] = useState<Sidebar>({
+    isOpen: false,
+    isEmployee,
+  });
   return (
     <SetSidebarContext.Provider value={setSidebar}>
       <SidebarContext.Provider value={sidebar}>
