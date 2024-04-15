@@ -13,6 +13,7 @@ const mainMenu: MenuItem[] = [
     href: '/dashboard/requests',
     title: 'درخواست مشکلات',
     icon: ChatCenteredText,
+    visibility: 'user',
   },
 ];
 

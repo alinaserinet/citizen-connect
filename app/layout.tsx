@@ -3,7 +3,6 @@ import '@libs/assets/styles/globals.css';
 
 import { authConfig } from '@config';
 import { AlertProvider, SidebarProvider, UserProvider } from '@libs/providers';
-import { jwtDecode } from 'jwt-decode';
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import type { ReactNode } from 'react';
@@ -19,15 +18,12 @@ export default async function RootLayout({
   children: ReactNode;
 }>) {
   const session = await getServerSession(authConfig);
-  const { isEmployee } = jwtDecode<{ isEmployee: boolean }>(
-    session?.user.accessToken ?? '',
-  );
 
   return (
     <html lang="fa" dir="rtl">
       <body className="text-[0.8rem]">
         <UserProvider session={session}>
-          <SidebarProvider isEmployee={isEmployee}>
+          <SidebarProvider>
             <AlertProvider>{children}</AlertProvider>
           </SidebarProvider>
         </UserProvider>

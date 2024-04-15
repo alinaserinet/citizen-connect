@@ -7,4 +7,5 @@ export default interface MenuItem {
   icon?: Icon;
   description?: string;
   subMenu?: MenuItem[];
+  visibility?: 'employee' | 'user';
 }
