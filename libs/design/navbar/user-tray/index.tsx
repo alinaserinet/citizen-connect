@@ -29,10 +29,10 @@ const UserTray = ({ className, userTitle }: UserTrayProps) => {
   return (
     <div className={twMerge('flex justify-end gap-4', className)}>
       <button onClick={handleToggleToolbox}>
-        <Avatar />
+        <Avatar className="text-white" />
       </button>
       <Card
-        className="absolute left-3 top-20 z-[-1] w-52 text-[0.8rem] opacity-0 shadow-lg transition-all ease-in-out"
+        className="absolute left-3 top-20 z-[-1] w-52 text-[0.8rem] text-black opacity-0 shadow-lg transition-all ease-in-out"
         ref={toolboxRef}
       >
         <CardBody className="border-0 p-0">
