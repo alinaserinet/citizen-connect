@@ -6,6 +6,13 @@ import type { MenuItem } from '@types';
 
 const mainMenu: MenuItem[] = [
   { id: 1, href: '/dashboard', title: 'داشبورد', icon: Atom },
+  {
+    id: 4,
+    href: '/dashboard/requests',
+    title: 'مشاهده درخواست‌ ها',
+    icon: ChatCenteredText,
+    visibility: 'employee',
+  },
   { id: 2, href: '/dashboard/profile', title: 'اطلاعات کاربری', icon: User },
   // { id: 1, href: '/profile', title: 'تنظیمات امنیتی', icon: ShieldCheckered },
   {
