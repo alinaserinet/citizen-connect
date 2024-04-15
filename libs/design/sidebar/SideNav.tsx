@@ -12,7 +12,10 @@ interface SideNavProps {
 const SideNav = ({ className, children }: SideNavProps) => {
   return (
     <Card
-      className={twMerge('h-full rounded-none p-3 lg:rounded-xl', className)}
+      className={twMerge(
+        'h-full rounded-none bg-slate-100 p-3 lg:rounded-xl',
+        className,
+      )}
     >
       <SidebarButton />
       {children}
